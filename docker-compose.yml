@@ -1,9 +1,10 @@
 services:
   tech-radar:
+    platform: linux/amd64
     build: .
     container_name: delivery-robot-tech-radar
     ports:
       - "8080:80"
     volumes:
-      # Live-mount radar.csv so changes are immediately visible on browser refresh
+      # Live-mount radar.csv so changes are immediately visible
       - ./radar.csv:/opt/build-your-own-radar/files/radar.csv:ro
